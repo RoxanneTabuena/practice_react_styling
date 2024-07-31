@@ -14,7 +14,7 @@
 
     Start by practicing your understanding of inline styling.
 
-    Find the <h1> element responsible for the game’s title, “Rock Paper Scissors”.
+    Find the h1 element responsible for the game’s title, “Rock Paper Scissors”.
 
     Apply an inline style to change the font size property to 48, and set the margin top property to 0.
 
@@ -38,34 +38,25 @@
         Font size of 48 pixels.
         Color with the value of #ffff.
 6. Great job! Our object variable styles are now defined. It’s time to apply it.
-        Apply the styles in choiceStyles to the <div> surrounding:
-
-        <span>{playerChoice.emoji}</span>
-        <p>You chose {playerChoice.name}</p>
-
-        and the <div> container surrounding:
-
-        <span>{codeyChoice.emoji}</span>
-        <p>The computer chose {codeyChoice.name}</p>
 
 7.  Apply the styles in emojiStyles to:
 
-    <span>{playerChoice.emoji}</span>
+    playerChoice.emoji
 
     as well as:
 
-    <span>{codeyChoice.emoji}</span>
+   codeyChoice.emoji
 
 8.   Apply the styles in nameStyles to:
 
-    <p>You chose {playerChoice.name}</p>
+    playerChoice.name
 
     as well as:
 
-    <p>Codey chose {codeyChoice.name}</p>
+    codeyChoice.name
 
 9.  Last, apply resultStyle to:
-        <h2>{result}</h2>
+    result
 
 10. Click Save to run your code. Your page should render with some styles applied. It doesn’t look great yet, because we’re not done with the        
     styling—but if you see the text and emojis in a bigger size, you’re on the right track!
@@ -73,20 +64,12 @@
 ### CSS Module Styling
 11. Let’s proceed to styling with CSS modules now.
     Open up Game.module.css. Take a look inside. There are already styles defined in there for you. All we have to do is apply it!
-    Go back to Game.js and apply the styles for the .container selector to the very first <div> after in the return statement:
-    return (
-    <div>
-        <h1 style={{ fontSize: 48, marginTop: 0 }}>Rock Paper Scissors</h1>
-        ...
-    </div>
-    );
-    Remember to import the CSS module into an object named styles!
 
-12. Apply the styles for the .choices selector to the <div> containing the rock, paper, scissors buttons.
-    You can find this <div> under the <h1> title and above the logic for mapping over the CHOICES object array.
+12. Apply the styles for the .choices selector to the div containing the rock, paper, scissors buttons.
+    You can find this div   under the h1   title and above the logic for mapping over the CHOICES object array.
 
-13. Next, apply the .results selector to the <div> containing the game’s results.
-    You can find this <div> between playerChoice && codeyChoice && ( and <div style={choiceStyles}>.
+13. Next, apply the .results selector to the div   containing the game’s results.
+    You can find this div   between playerChoice && codeyChoice && ( and div style={choiceStyles}  .
 
 14. Lastly, apply the styles for the .button selector to the Play Again button and each choice button.
 
