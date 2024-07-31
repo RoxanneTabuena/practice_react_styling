@@ -1,71 +1,93 @@
-# Getting Started with Create React App
+# Styling Rock, Paper, Scissors
+## This is a practice project from the codecademy front end platform. Much of this code was already set up for me.
+>In this project, you will get the chance to practice styling React applications using different techniques.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+>You will be styling a game of Rock, Paper, Scissors. However, rather than sticking to one technique, you will be asked to modify its appearance using inline styling syntax, object variable syntax, and, finally, CSS modules!
 
-## Available Scripts
+>Throughout the project, you’ll be able to explore the advantages and disadvantages of each approach and practice React naming conventions for style properties.
 
-In the project directory, you can run:
+>By the end of this practice project, you will have improved your skills in styling React applications using various techniques and gained a deeper understanding of the different approaches. You will be able to apply your learnings to future React projects and improve your coding skills!
 
-### `npm start`
+## I took the following steps to practice styling in React:
+### Inline Styling
+1.  Take a look at Game.js. The game is already functional, but it needs some styling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Start by practicing your understanding of inline styling.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Find the <h1> element responsible for the game’s title, “Rock Paper Scissors”.
 
-### `npm test`
+    Apply an inline style to change the font size property to 48, and set the margin top property to 0.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Object Variable Styling
+2.  Next, let’s define a few object variables to use for styling.
+    Above the Game component, create an object variable named choiceStyles. The object should contain the following properties:
+        Display with the value of flex.
+        Align items with the value of center.
+        Margin bottom with a value of 40 pixels.
 
-### `npm run build`
+3.  Under the choiceStyles, define another object variable named emojiStyles with the following properties:
+        Font size with the value 64 pixels.
+        Margin right with the value of 20 pixels.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4.  Under the emojiStyles, define another object variable named nameStyles with the following properties:
+        Margin of 0 pixels.
+        Font size of 24 pixels.
+        Color with the value of #ffff.
+5.  Last, under the nameStyles, define another object variable named resultStyle with the following properties:
+        Margin top of 40 pixels.
+        Font size of 48 pixels.
+        Color with the value of #ffff.
+6. Great job! Our object variable styles are now defined. It’s time to apply it.
+        Apply the styles in choiceStyles to the <div> surrounding:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        <span>{playerChoice.emoji}</span>
+        <p>You chose {playerChoice.name}</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        and the <div> container surrounding:
 
-### `npm run eject`
+        <span>{codeyChoice.emoji}</span>
+        <p>The computer chose {codeyChoice.name}</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+7.  Apply the styles in emojiStyles to:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    <span>{playerChoice.emoji}</span>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    as well as:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    <span>{codeyChoice.emoji}</span>
 
-## Learn More
+8.   Apply the styles in nameStyles to:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    <p>You chose {playerChoice.name}</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    as well as:
 
-### Code Splitting
+    <p>Codey chose {codeyChoice.name}</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+9.  Last, apply resultStyle to:
+        <h2>{result}</h2>
 
-### Analyzing the Bundle Size
+10. Click Save to run your code. Your page should render with some styles applied. It doesn’t look great yet, because we’re not done with the        
+    styling—but if you see the text and emojis in a bigger size, you’re on the right track!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### CSS Module Styling
+11. Let’s proceed to styling with CSS modules now.
+    Open up Game.module.css. Take a look inside. There are already styles defined in there for you. All we have to do is apply it!
+    Go back to Game.js and apply the styles for the .container selector to the very first <div> after in the return statement:
+    return (
+    <div>
+        <h1 style={{ fontSize: 48, marginTop: 0 }}>Rock Paper Scissors</h1>
+        ...
+    </div>
+    );
+    Remember to import the CSS module into an object named styles!
 
-### Making a Progressive Web App
+12. Apply the styles for the .choices selector to the <div> containing the rock, paper, scissors buttons.
+    You can find this <div> under the <h1> title and above the logic for mapping over the CHOICES object array.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+13. Next, apply the .results selector to the <div> containing the game’s results.
+    You can find this <div> between playerChoice && codeyChoice && ( and <div style={choiceStyles}>.
 
-### Advanced Configuration
+14. Lastly, apply the styles for the .button selector to the Play Again button and each choice button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# practice_react_styling
+15. Press Save to run and see how the Rock Paper Scissors game has been fleshed out and styled in three different ways!
